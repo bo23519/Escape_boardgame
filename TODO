@@ -1,0 +1,53 @@
+BeforeAll: understand requirements, read though the developer's guide
+BeforeEach: follow up the newest update from announcement, discussion, slack
+
+ALPHA==============================================================
+
+	X Write Tests and implement for game constructor
+		X Test for the gameBuilder to have a not null manager
+		X Create Class for gameManager interface
+		
+	X Write Tests and implement for makeCoordinate methods()
+		X Tests for makeCoordinate() to return a Coordinate that is not null
+		X Create SquareCoordinate Class that implement the Coordinate Interface
+		
+	X Write Test and implement for getPieceAt()
+		X Tests for getPieceAt() according to the sample config file
+		X Create Piece() class that implements the EscapePiece interface
+		X Create Board interface, and EscapeBoard class implement the interface for storing information
+			between Coordinate and Piece
+			X HashMap<C, Pieces> to store all the pieces from config
+		X Implement the getPieceAt() method in EscapeBoard, drawing info from it
+		
+	X Write Test and implement for move()
+		X Tests for all different result that might happen
+		X Create move() method in EscapeBoard
+			X ArrayList<Coordinates> to store location information like EXIT, BLOCK
+	
+	X Overall perfection, checking for the potential information that might be missing
+	
+BETA==================================================================
+
+	X Quick go over for the places that is true for Alpha but not for Beta
+		- Moving to original location
+		- Adapt new configuration file
+			- Add TriangleCoordinate Class
+		- Winning Rule: no pieces is considered lose
+			
+	X Write Tests and start building the class: MoveValidationEngine
+		X Come up with test cases that are representative
+		X Focus on the SquareBoard moveEngine
+			X Invalid move location checking moved to moveEngine class
+			X Create methods in EscapePiece to return neighbors and jump destinations
+			X Adapt BFS path-finding algorithm
+				X Watch for movement patterns, attributes
+				X Different cases of jumping
+		X Triangle path-finding
+			X returning different set of neighbors
+			X two-jumping destinations
+			
+	X Write Test and implement Triangle distanceTo() method
+		X Make sure the coverage test also cover all the methods
+		
+	X Further expansion:
+		X Some of game rules, Orthor and hex board(commented out)

@@ -1,0 +1,20 @@
+Coordinate type : ORTHOSQUARE
+xMax : 25
+yMax : 20
+
+Locations :
+	(3, 3) player1 dog
+	(3, 5) player2 bird
+	(4, 4) clear player1 frog
+	(3, 8) exit
+	
+Piece descriptors :
+	SNAIL omni [distance 1]
+	DOG linear [distance 5]
+	bird omni [fly 5]
+	frog orthogonal [distance 3, unblock]
+	
+Rules :
+	REMOVE
+	SCORE 10
+	TURN_LIMIT 20
